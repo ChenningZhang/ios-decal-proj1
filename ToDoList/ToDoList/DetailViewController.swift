@@ -10,10 +10,19 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var titleTextField: UITextField? = UITextField()
+    @IBOutlet weak var notesTextView: UITextView? = UITextView()
+    var toDoData:NSDictionary = NSDictionary()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        titleTextField?.userInteractionEnabled = false
+        notesTextView?.userInteractionEnabled = false
+        
+        titleTextField?.text = toDoData.objectForKey("itemTitle") as? String
+        notesTextView?.text = toDoData.objectForKey("itemNote") as! String
     }
 
     override func didReceiveMemoryWarning() {

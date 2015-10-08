@@ -21,7 +21,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BIk-37-nzy" kind="push" id="ocE-g4-ioa"/>
+                                    <segue destination="BIk-37-nzy" kind="push" identifier="showDetail" id="ocE-g4-ioa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,7 +73,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add your item note here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-pr-tx9">
-                                <rect key="frame" x="20" y="261" width="240" height="128"/>
+                                <rect key="frame" x="20" y="245" width="240" height="128"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -81,9 +81,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zGi-J2-ZPh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="cga-kW-vaK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="cga-kW-vaK">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="bji-mp-BMP" id="0pb-IN-98c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="notesTextField" destination="kbg-pr-tx9" id="A8Y-zx-ipg"/>
+                        <outlet property="titleTextField" destination="BBt-TQ-deg" id="vca-fG-ezf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTY-ls-J8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,6 +138,10 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="eLg-Vh-ZCS"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="notesTextView" destination="7Cv-iI-Hsd" id="ke4-z9-tHH"/>
+                        <outlet property="titleTextField" destination="X9l-tW-veY" id="6ny-p0-Ybq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E58-Dh-EIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
