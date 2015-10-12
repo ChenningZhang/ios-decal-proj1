@@ -106,8 +106,8 @@ class MasterTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "showDetail" {
-            var selectedIndexPath:NSIndexPath = self.tableView.indexPathForSelectedRow!
-            var detailViewController:DetailViewController = segue.destinationViewController as! DetailViewController
+            let selectedIndexPath:NSIndexPath = self.tableView.indexPathForSelectedRow!
+            let detailViewController:DetailViewController = segue.destinationViewController as! DetailViewController
             
             detailViewController.toDoData = toDoItems.objectAtIndex(selectedIndexPath.row) as! NSDictionary
         }

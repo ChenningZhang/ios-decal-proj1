@@ -25,6 +25,26 @@ class DetailViewController: UIViewController {
         notesTextView?.text = toDoData.objectForKey("itemNote") as! String
     }
 
+    @IBAction func deleteItem(sender: AnyObject) {
+        
+        let userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let itemListArray:NSMutableArray = userDefaults.objectForKey("itemList") as! NSMutableArray
+        
+        let mutableItemList:NSMutableArray = NSMutableArray()
+        
+        for dict:AnyObject in itemListArray {
+            mutableItemList.addObject(dict as! NSDictionary)
+        }
+        
+        mutableItemList.removeObject(toDoData)
+        
+        userDefaults.removeObjectForKey("itemList")
+        userDefaults.setObject(mutableItemList, forKey: "itemList")
+        userDefaults.synchronize()
+        
+        navigationController?.popToRootViewControllerAnimated(true)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

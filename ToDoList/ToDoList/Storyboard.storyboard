@@ -135,7 +135,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="u9X-rA-z65">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="eLg-Vh-ZCS"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="eLg-Vh-ZCS">
+                            <connections>
+                                <action selector="deleteItem:" destination="BIk-37-nzy" id="tDl-Tl-10i"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
